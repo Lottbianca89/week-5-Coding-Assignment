@@ -1,70 +1,126 @@
-//Menu week05
+// Week-5-Coding-Assignment
 
-class MenuApp {
-    constructor() {
-      this.order = [];
-    }
-  
-    createOrder(item, cost) {
-      this.order.push({ item, cost });
-    }
-  
-    viewOrder() {
-      if (this.order.length === 0) {
-        console.log("Your order is empty.");
-      } else {
-        console.log("Order Items:");
-        this.order.forEach((item, index) => {
-          console.log(`${index + 1}. ${item.item} - $${item.cost}`);
-        });
-      }
-    }
-  
-    deleteOrder(index) {
-      if (index >= 1 && index <= this.order.length) {
-        const deletedItem = this.order.splice(index - 1, 1);
-        console.log(`Deleted: ${deletedItem[0].item} - $${deletedItem[0].cost}`);
-      } else {
-        console.log("Invalid index. No item deleted.");
-      }
-    }
+class Student {
+  constructor(name, age) {
+    this.name =name;
+    this.age =age;
   }
-  
-  const menuApp = new MenuApp();
-  
-  // Display Menu
-  class MenuItem {
-    constructor() {
-      this.menuItemsCost = {
-        cheeseBurgerComb: 11,
-        pretzelHotDogComb: 7,
-        hotWingsComb: 9,
-      };
-    }
+
+describe() {
+  return ` ${this.name} is  ${this.age}.`;
+}
+}
+
+class Student {
+constructor(name) {
+  this.name = name;
+  this.Student = [];
+}
+
+addStudent(student) {
+  if (student instanceof student) {
+    this.Student.push(Student);
+  } else {
+    throw new Error(`You can only add an instanceof Student. Argument is not a student $(student)`);
   }
+}
+
+describe() {
+  return `${this.name} has ${this.student.length} student.`;
+}
+}
+
+class Menu {
+  constructor() {
+    this.class = [];
+    this.selected = null;
+  }
+
+start() {
+  let selection = this.showMainMenuOptions();
+  while (selection != 0) {
+    switch (selection) {
+      case '1':
+        this.createclassByAge();
+        break;
+      case '2':
+        this.viewClass();
+        break;
+      case '3'
+       this.deleteClass();
+       break;
+      case '4'
+      this.displayClasses();
+      break;
+      defaults:
+      selections = 0;
+    }
+  selection = this.showMainMenuOptions();
+  }
+
+
+  alert('GoodBye!');
+}
+
+showMainMenuOptions() {
+  return prompt(`
+  0)exit
+  1)select new class
+  2)view class
+  3)delete class
+  4)display all classes
+  `);
+}
+
+shpwClassMenuOptions(classInfo) {
+  return prompt(`
+  0) back
+  1)create student
+  2)delete student
+  -------------------------------
+  $(classInfo)
+  `);
+}
+
+displayClass() {
+  let classstring = '';
+  for (let i = 0; i < this.class.length; i++) {
+    classstring += i + ') ' + this.class[i].name + '\n';
+  }
+alert (classstring);
+}
+
+createClass() {
+  let name = prompt('Enter name for new class');
+  this.class.push(new Class(name));
+}
+
+viewClass() {
+  let index = prompt('Enter the index of the class you wish to view:');
+  if (index > -1 && index < this.class.length) {
+    this. selectedClass = this.class[index];
+    let description = 'Class name:  ' + this.selectedclass + '\n';
+
+  for (let i = 0; i < this.selectedClass.student.length) {
+    descripton += i + ') ' + this.selectedClass.student.length[i].name 
+    + ' - ' + this.selectedclass.student[i].age + '\n';
+  }
+
+
+let selection = this.showClassMenuOption(description);
+switch (selection) {
+  case '1':
+    this.createStudent();
+    break;
+    case '2'
+    this.deleteStudent();
+
+}
+}
+}
+}
+
+let menu = new Menu();
+menu.start();
+
   
-  const menuItem = new MenuItem();
-  
-  console.log("Welcome to the Menu App!");
-  
-  
-  menuApp.createOrder("cheeseBurgerComb", menuItem.menuItemsCost.cheeseBurgerComb);
-  menuApp.createOrder("hotWingsComb", menuItem.menuItemsCost.hotWingsComb);
-  menuApp.viewOrder();
-  menuApp.deleteOrder(1);
-  menuApp.viewOrder();
-  
-
-
-
-
-
-
-   
-
-
- 
-    
-
-
-
