@@ -1,25 +1,15 @@
 // Week-5-Coding-Assignment
 
-class Student {
-  constructor(name, age) {
-    this.name =name;
-    this.age =age;
-  }
-
-describe() {
-  return ` ${this.name} is  ${this.age}.`;
-}
-}
 
 class Student {
 constructor(name) {
   this.name = name;
-  this.Student = [];
+  this.students = [];
 }
 
 addStudent(student) {
-  if (student instanceof student) {
-    this.Student.push(Student);
+  if (student instanceof students) {
+    this.student.push(Student);
   } else {
     throw new Error(`You can only add an instanceof Student. Argument is not a student $(student)`);
   }
@@ -38,7 +28,7 @@ class Menu {
 
 start() {
   let selection = this.showMainMenuOptions();
-  while (selection != 0) {
+  while (selection !== 0) {
     switch (selection) {
       case '1':
         this.createclassByAge();
@@ -46,14 +36,14 @@ start() {
       case '2':
         this.viewClass();
         break;
-      case '3'
+      case '3':
        this.deleteClass();
        break;
-      case '4'
+      case '4':
       this.displayClasses();
       break;
-      defaults:
-      selections = 0;
+      default:
+      selection = 0;
     }
   selection = this.showMainMenuOptions();
   }
@@ -63,13 +53,14 @@ start() {
 }
 
 showMainMenuOptions() {
-  return prompt(`
+  let selection = prompt(`
   0)exit
   1)select new class
   2)view class
   3)delete class
   4)display all classes
   `);
+  return selection;
 }
 
 shpwClassMenuOptions(classInfo) {
@@ -101,8 +92,8 @@ viewClass() {
     this. selectedClass = this.class[index];
     let description = 'Class name:  ' + this.selectedclass + '\n';
 
-  for (let i = 0; i < this.selectedClass.student.length) {
-    descripton += i + ') ' + this.selectedClass.student.length[i].name 
+  for (let i = 0; i < this.selectedClass.student.length; i++) {
+    description += i + ') ' + this.selectedClass.student.length[i].name 
     + ' - ' + this.selectedclass.student[i].age + '\n';
   }
 
@@ -112,7 +103,7 @@ switch (selection) {
   case '1':
     this.createStudent();
     break;
-    case '2'
+    case '2':
     this.deleteStudent();
 
 }
