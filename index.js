@@ -28,7 +28,7 @@ class Menu {
 
 start() {
   let selection = this.showMainMenuOptions();
-  while (selection !== 0) {
+  while (selection != 0) {
     switch (selection) {
       case '1':
         this.createclassByAge();
@@ -42,6 +42,7 @@ start() {
       case '4':
       this.displayClasses();
       break;
+  
       default:
       selection = 0;
     }
